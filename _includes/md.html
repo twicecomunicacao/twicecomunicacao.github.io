@@ -1,0 +1,1 @@
+{{ include.v | markdownify | remove: '<p>' | remove: '</p>' | strip | replace: '[', '<span class="ph">[' | replace: ']', ']</span>' }}

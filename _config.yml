@@ -1,0 +1,9 @@
+title: Twice | Comunicação em dobro
+markdown: kramdown
+kramdown:
+  input: GFM
+exclude:
+  - .pages.yml
+  - README.md
+  - LEIA-ME.md
+url: "https://twicecomunicacao.github.io"

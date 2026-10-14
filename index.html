@@ -1,0 +1,395 @@
+---
+---
+{%- assign g = site.data.site.geral -%}
+{%- assign i = site.data.site.inicio -%}
+{%- assign s = site.data.site.sobre -%}
+{%- assign sv = site.data.site.servicos -%}
+{%- assign f = site.data.site.formatos -%}
+{%- assign p = site.data.site.portfolio -%}
+{%- assign b = site.data.site.bastidores -%}
+{%- assign cf = site.data.site.como_funciona -%}
+{%- assign q = site.data.site.perguntas -%}
+{%- assign c = site.data.site.criar -%}
+{%- assign ct = site.data.site.contato -%}
+{%- assign r = site.data.site.rodape -%}
+{%- capture wa_link -%}https://wa.me/{{ g.whatsapp }}?text={{ g.mensagem_whatsapp | url_encode | replace: '+', '%20' }}{%- endcapture -%}
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>{{ g.titulo_aba | escape }}</title>
+<meta name="description" content="{{ g.descricao_google | escape }}">
+<meta name="theme-color" content="#201F1F">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Twice | Comunicação em dobro">
+<meta property="og:description" content="{{ g.descricao_google | escape }}">
+<meta property="og:image" content="{{ site.url }}/assets/img/og.jpg">
+<meta property="og:url" content="{{ site.url }}/">
+<link rel="icon" type="image/png" href="assets/img/favicon.png">
+<link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;600;700&family=Questrial&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body>
+
+<a class="skip" href="#conteudo">Pular para o conteúdo</a>
+
+<header class="nav" id="nav">
+  <a class="nav__logo" href="#inicio" aria-label="Twice — voltar ao início">
+    <img src="assets/img/mark-branco.png" alt="twice" width="900" height="249">
+  </a>
+  <nav class="nav__links" aria-label="Principal">
+    <a href="#a-twice">A Twice</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#portfolio">Portfólio</a>
+    <a href="#como-funciona">Como funciona</a>
+    <a href="#perguntas">Perguntas</a>
+    <a href="#contato">Contato</a>
+  </nav>
+  <a class="btn btn--light btn--sm nav__cta" href="#criar">{{ i.botao_principal | escape }}</a>
+  <button class="nav__burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="menu"><span></span><span></span></button>
+</header>
+
+<div class="menu" id="menu" hidden>
+  <nav aria-label="Menu">
+    <a href="#inicio">Início</a>
+    <a href="#a-twice">A Twice</a>
+    <a href="#servicos">Serviços</a>
+    <a href="#portfolio">Portfólio</a>
+    <a href="#como-funciona">Como funciona</a>
+    <a href="#perguntas">Perguntas</a>
+    <a href="#contato">Contato</a>
+  </nav>
+  <a class="btn btn--light" href="#criar">{{ i.botao_principal | escape }}</a>
+  <p class="menu__foot">{{ g.whatsapp_exibicao | escape }}{% if g.instagram != blank %} · @{{ g.instagram | escape }}{% endif %}</p>
+</div>
+
+<main id="conteudo">
+
+<!-- 1. INÍCIO -->
+<section class="hero dark" id="inicio">
+  <div class="wrap hero__grid">
+    <div class="hero__text">
+      <p class="label reveal">{{ i.rotulo | escape | replace: '|', '<span class="bar">|</span>' }}</p>
+      <h1 class="hero__title reveal">{{ i.titulo | escape | newline_to_br }}</h1>
+      <p class="hero__lead reveal">{% include md.html v=i.texto %}</p>
+      <div class="hero__ctas reveal">
+        <a class="btn btn--light" href="#criar">{{ i.botao_principal | escape }}</a>
+        <a class="btn btn--line" href="#portfolio">{{ i.botao_secundario | escape }}</a>
+      </div>
+    </div>
+
+    <div class="twin reveal" aria-label="{{ i.legenda_fora | escape }} e {{ i.legenda_dentro | escape }}">
+      <figure class="twin__frame">
+        <video class="auto" muted loop playsinline preload="none" poster="assets/poster/v13.webp" data-src="assets/video/v13-p.mp4" aria-label="Bastidor: a Twice registrando um evento"></video>
+        <figcaption>{{ i.legenda_fora | escape }}</figcaption>
+      </figure>
+      <figure class="twin__frame twin__frame--low">
+        <video class="auto" muted loop playsinline preload="none" poster="assets/poster/hero.webp" data-src="assets/video/hero.mp4" aria-label="Trechos de vídeos do portfólio"></video>
+        <figcaption>{{ i.legenda_dentro | escape }}</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <dl class="wrap ficha">
+    {%- for item in i.ficha %}
+    <div class="reveal"><dt>{{ item.titulo | escape }}</dt><dd>{% include t.html v=item.texto %}</dd></div>
+    {%- endfor %}
+  </dl>
+</section>
+
+<!-- 2. A TWICE -->
+<section class="sec light" id="a-twice">
+  <div class="wrap about">
+    <div class="about__text">
+      <p class="label reveal">{{ s.rotulo | escape }}</p>
+      <h2 class="h2 reveal">{{ s.titulo | escape | newline_to_br }}</h2>
+      {%- for par in s.paragrafos %}
+      <p class="reveal">{% include md.html v=par.texto %}</p>
+      {%- endfor %}
+    </div>
+
+    <div class="about__pair">
+      {%- if s.foto1 != blank %}
+      <figure class="about__photo reveal">
+        <img src="{{ s.foto1 }}" width="565" height="900" alt="{{ s.foto1_nome | escape }}, {{ s.foto1_legenda | escape }}" loading="lazy">
+        <figcaption><strong>{{ s.foto1_nome | escape }}</strong><span>{{ s.foto1_legenda | escape }}</span></figcaption>
+      </figure>
+      {%- endif %}
+      {%- if s.foto2 != blank %}
+      <figure class="about__photo about__photo--low reveal">
+        <img src="{{ s.foto2 }}" width="600" height="900" alt="{{ s.foto2_nome | escape }}, {{ s.foto2_legenda | escape }}" loading="lazy">
+        <figcaption><strong>{{ s.foto2_nome | escape }}</strong><span>{{ s.foto2_legenda | escape }}</span></figcaption>
+      </figure>
+      {%- endif %}
+    </div>
+
+    {%- if s.luisa_texto != blank %}
+    <div class="about__luisa reveal">
+      <p class="label">{{ s.luisa_titulo | escape }}</p>
+      <p>{% include md.html v=s.luisa_texto %}</p>
+    </div>
+    {%- endif %}
+  </div>
+
+  {%- if s.frase_destaque != blank %}
+  <blockquote class="wrap quote reveal">
+    <p>{% include md.html v=s.frase_destaque %}</p>
+  </blockquote>
+  {%- endif %}
+</section>
+
+<!-- 3. SERVIÇOS -->
+<section class="sec dark" id="servicos">
+  <div class="wrap">
+    <div class="sec__head">
+      <p class="label reveal">{{ sv.rotulo | escape }}</p>
+      <h2 class="h2 reveal">{{ sv.titulo | escape | newline_to_br }}</h2>
+      <p class="sec__note reveal">{% include md.html v=sv.nota %}</p>
+    </div>
+
+    <div class="svc">
+      <ol class="svc__list" id="svcList">
+        {%- for item in sv.itens %}
+        {%- assign n = forloop.index0 %}
+        <li class="svc__item{% if forloop.first %} is-open{% endif %}" data-i="{{ n }}">
+          <button class="svc__row" aria-expanded="{% if forloop.first %}true{% else %}false{% endif %}" aria-controls="svc{{ n }}">
+            <span class="svc__num">{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</span>
+            <span class="svc__name">{{ item.nome | escape }}</span>
+            <span class="svc__for">{{ item.para_quem | escape }}</span>
+            <span class="svc__plus" aria-hidden="true"></span>
+          </button>
+          <div class="svc__body" id="svc{{ n }}">
+            <div class="svc__inner">
+              <div class="svc__media-m"><video muted loop playsinline preload="none" poster="{{ item.capa }}" data-src="{{ item.previa }}" aria-hidden="true"></video></div>
+              <p>{% include md.html v=item.descricao %}</p>
+              <a class="link-cta" href="#criar" data-service="{{ item.nome | escape }}">Quero esse <span aria-hidden="true">→</span></a>
+            </div>
+          </div>
+        </li>
+        {%- endfor %}
+      </ol>
+
+      <div class="svc__stage" aria-hidden="true">
+        <div class="svc__frame">
+          {%- for item in sv.itens %}
+          <video{% if forloop.first %} class="is-on"{% endif %} muted loop playsinline preload="none" poster="{{ item.capa }}" data-src="{{ item.previa }}"></video>
+          {%- endfor %}
+        </div>
+        <p class="svc__sign">{{ sv.assinatura | escape }}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 4. FORMATOS -->
+<section class="sec light" id="formatos">
+  <div class="wrap formatos__head">
+    <div>
+      <p class="label reveal">{{ f.rotulo | escape }}</p>
+      <h2 class="h2 reveal">{{ f.titulo | escape | newline_to_br }}</h2>
+      <p class="sub reveal">{% include md.html v=f.subtitulo %}</p>
+    </div>
+    <div class="formatos__aside reveal">
+      <p>{% include md.html v=f.texto %}</p>
+      <div class="arrows">
+        <button class="arrow" data-dir="-1" aria-label="Formato anterior">←</button>
+        <button class="arrow" data-dir="1" aria-label="Próximo formato">→</button>
+      </div>
+    </div>
+  </div>
+
+  <div class="rail" id="rail" tabindex="0" aria-label="Formatos, role para o lado">
+    {%- for item in f.itens %}
+    {%- capture num %}{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}{% endcapture %}
+    <article class="fmt">
+      <span class="fmt__num">{{ num }}</span>
+      <button class="fmt__frame play" data-full="{{ item.video }}" data-cap="{{ item.nome | escape }}" aria-label="Assistir formato {{ num }} com som">
+        <video class="auto" muted loop playsinline preload="none" poster="{{ item.capa }}" data-src="{% if item.previa != blank %}{{ item.previa }}{% else %}{{ item.video }}{% endif %}"></video>
+      </button>
+      <h3 class="fmt__name">{% include t.html v=item.nome %}</h3>
+      {%- if item.descricao != blank %}
+      <p class="fmt__desc">{% include md.html v=item.descricao %}</p>
+      {%- endif %}
+    </article>
+    {%- endfor %}
+  </div>
+</section>
+
+<!-- 5. PORTFÓLIO -->
+<section class="sec black" id="portfolio">
+  <div class="wrap">
+    <div class="sec__head sec__head--row">
+      <div>
+        <p class="label reveal">{{ p.rotulo | escape }}</p>
+        <h2 class="h2 h2--xl reveal">{{ p.titulo | escape | newline_to_br }}</h2>
+      </div>
+      <p class="sec__note reveal">{% include md.html v=p.nota %}</p>
+    </div>
+
+    <div class="grid" id="grid">
+      {%- for item in p.itens %}
+      {%- capture cap %}{{ item.tipo }}{% if item.cliente != blank and item.cliente contains '[INSERIR' %}{% elsif item.cliente != blank %} · {{ item.cliente }}{% endif %}{% endcapture %}
+      <button class="tile play reveal" data-full="{{ item.video }}" data-cap="{{ cap | escape }}" aria-label="Assistir: {{ item.tipo | escape }}, com som"{% if forloop.index > p.mostrar_primeiros %} hidden{% endif %}>
+        <video class="auto" muted loop playsinline preload="none" poster="{{ item.capa }}" data-src="{% if item.previa != blank %}{{ item.previa }}{% else %}{{ item.video }}{% endif %}"></video>
+        <span class="tile__watch">Assistir</span>
+        <span class="tile__cap"><strong>{{ item.tipo | escape }}</strong>{% if item.cliente != blank %}{% include t.html v=item.cliente %}{% endif %}</span>
+      </button>
+      {%- endfor %}
+    </div>
+    {%- if p.itens.size > p.mostrar_primeiros %}
+    <div class="grid__more"><button class="btn btn--line" id="more">{{ p.botao_mais | escape }}</button></div>
+    {%- endif %}
+  </div>
+
+  <div class="wrap dobro">
+    <div class="dobro__text">
+      <p class="label reveal">{{ b.rotulo | escape }}</p>
+      <h3 class="h3 reveal">{{ b.titulo | escape | newline_to_br }}</h3>
+      <p class="reveal">{% include md.html v=b.texto %}</p>
+    </div>
+    <div class="dobro__pair">
+      <button class="dobro__frame play reveal" data-full="{{ b.fora_video }}" data-cap="{{ b.fora_legenda | escape }}" aria-label="Assistir bastidor com som">
+        <video class="auto" muted loop playsinline preload="none" poster="{{ b.fora_capa }}" data-src="{{ b.fora_previa }}"></video>
+        <span class="dobro__cap">{{ b.fora_legenda | escape }}</span>
+      </button>
+      <span class="dobro__sep" aria-hidden="true"></span>
+      <button class="dobro__frame play reveal" data-full="{{ b.dentro_video }}" data-cap="{{ b.dentro_legenda | escape }}" aria-label="Assistir vídeo finalizado com som">
+        <video class="auto" muted loop playsinline preload="none" poster="{{ b.dentro_capa }}" data-src="{{ b.dentro_previa }}"></video>
+        <span class="dobro__cap">{{ b.dentro_legenda | escape }}</span>
+      </button>
+    </div>
+  </div>
+</section>
+
+<!-- 6. COMO FUNCIONA -->
+<section class="sec light" id="como-funciona">
+  <div class="wrap">
+    <div class="sec__head">
+      <p class="label reveal">{{ cf.rotulo | escape }}</p>
+      <h2 class="h2 reveal">{{ cf.titulo | escape | newline_to_br }}</h2>
+    </div>
+    <ol class="steps">
+      {%- for item in cf.passos %}
+      <li class="reveal"><span class="steps__n">{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}</span><h3>{{ item.titulo | escape }}</h3><p>{% include md.html v=item.texto %}</p></li>
+      {%- endfor %}
+    </ol>
+  </div>
+</section>
+
+<!-- 7. PERGUNTAS -->
+<section class="sec light sec--tight" id="perguntas">
+  <div class="wrap faq">
+    <div>
+      <p class="label reveal">{{ q.rotulo | escape }}</p>
+      <h2 class="h2 reveal">{{ q.titulo | escape | newline_to_br }}</h2>
+    </div>
+    <div class="faq__list">
+      {%- for item in q.itens %}
+      <details class="reveal">
+        <summary>{{ item.pergunta | escape }}</summary>
+        <div><p>{% include md.html v=item.resposta %}</p></div>
+      </details>
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+
+<!-- 8. VAMOS CRIAR + CONTATO -->
+<section class="sec black criar" id="criar">
+  <div class="wrap criar__grid">
+    <div class="criar__head">
+      <p class="label reveal">{{ c.rotulo | escape }}</p>
+      <h2 class="criar__title reveal">{{ c.titulo | escape | newline_to_br }}</h2>
+      <p class="criar__sign reveal">{{ c.frase | escape }}</p>
+      <p class="criar__hint reveal">{% include md.html v=c.dica %}</p>
+    </div>
+
+    <form class="form reveal" id="form" novalidate data-wa="{{ g.whatsapp }}" data-msg="{{ g.mensagem_whatsapp | escape }}">
+      <div class="field">
+        <label for="f-nome">Seu nome</label>
+        <input id="f-nome" name="nome" type="text" autocomplete="name" required>
+        <p class="field__err" id="e-nome" aria-live="polite"></p>
+      </div>
+      <fieldset class="field">
+        <legend>Qual serviço?</legend>
+        <div class="chips" id="chips">
+          {%- for item in sv.itens %}
+          <label><input type="radio" name="servico" value="{{ item.nome | escape }}"{% if forloop.first %} required{% endif %}><span>{{ item.nome | escape }}</span></label>
+          {%- endfor %}
+          <label><input type="radio" name="servico" value="Ainda não sei"><span>Ainda não sei</span></label>
+        </div>
+        <p class="field__err" id="e-servico" aria-live="polite"></p>
+      </fieldset>
+      <div class="field">
+        <label for="f-data">Data do evento ou projeto <span class="opt">(opcional)</span></label>
+        <input id="f-data" name="data" type="date">
+      </div>
+      <div class="field">
+        <label for="f-projeto">Conte rapidamente sobre o projeto</label>
+        <textarea id="f-projeto" name="projeto" rows="3" required placeholder="Ex.: o que é, onde acontece e para que vai usar o vídeo"></textarea>
+        <p class="field__err" id="e-projeto" aria-live="polite"></p>
+      </div>
+      <button class="btn btn--light btn--full" type="submit">{{ c.botao | escape }}</button>
+      <p class="form__note">{{ c.nota | escape }}</p>
+    </form>
+  </div>
+
+  <div class="wrap contato" id="contato">
+    <ul class="contato__list">
+      {%- if g.whatsapp != blank %}
+      <li><span class="label">WhatsApp</span><a href="{{ wa_link }}" target="_blank" rel="noopener">{{ g.whatsapp_exibicao | escape }}</a></li>
+      {%- endif %}
+      {%- if g.instagram != blank %}
+      <li><span class="label">Instagram</span><a href="https://www.instagram.com/{{ g.instagram }}/" target="_blank" rel="noopener">@{{ g.instagram | escape }}</a></li>
+      {%- endif %}
+      {%- if g.email != blank %}
+      <li><span class="label">E-mail</span><a href="mailto:{{ g.email }}">{{ g.email | escape }}</a></li>
+      {%- endif %}
+      {%- if g.cidade != blank %}
+      <li><span class="label">Onde</span><span>{{ g.cidade | escape }}</span></li>
+      {%- endif %}
+    </ul>
+    <p class="contato__sign"><strong>{{ ct.assinatura_nome | escape }}</strong> — {{ ct.assinatura_texto | escape }}</p>
+  </div>
+</section>
+
+</main>
+
+<footer class="footer">
+  <div class="wrap footer__grid">
+    <img class="footer__logo" src="assets/img/logo-branco.png" alt="Twice — Comunicação em dobro" width="900" height="317">
+    <div class="footer__meta">
+      <p>{{ r.linha1 | escape }}</p>
+      <p>{{ r.linha2 | escape }}</p>
+    </div>
+    <nav class="footer__links" aria-label="Rodapé">
+      {%- if r.link_condicoes != blank %}<a href="{{ r.link_condicoes }}" target="_blank" rel="noopener">Condições e suporte</a>{% endif %}
+      {%- if r.link_privacidade != blank %}<a href="{{ r.link_privacidade }}" target="_blank" rel="noopener">Política de Privacidade</a>{% endif %}
+    </nav>
+    <p class="footer__copy">© <span id="ano">{{ site.time | date: '%Y' }}</span> {{ r.copyright | escape }}</p>
+  </div>
+</footer>
+
+{%- if g.whatsapp != blank %}
+<a class="wa" id="wa" href="{{ wa_link }}" target="_blank" rel="noopener" aria-label="Conversar com a Twice no WhatsApp">
+  <span class="wa__dot" aria-hidden="true"></span><span>{{ g.botao_whatsapp | escape }}</span>
+</a>
+{%- endif %}
+
+<div class="lb" id="lb" role="dialog" aria-modal="true" aria-label="Vídeo do portfólio" hidden>
+  <button class="lb__close" id="lbClose" aria-label="Fechar vídeo">Fechar</button>
+  <button class="lb__nav lb__nav--prev" id="lbPrev" aria-label="Vídeo anterior">←</button>
+  <figure class="lb__fig">
+    <video id="lbVideo" controls playsinline preload="metadata"></video>
+    <figcaption id="lbCap"></figcaption>
+  </figure>
+  <button class="lb__nav lb__nav--next" id="lbNext" aria-label="Próximo vídeo">→</button>
+</div>
+
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>
