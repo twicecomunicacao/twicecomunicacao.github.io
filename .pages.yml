@@ -1,0 +1,419 @@
+media:
+  input: assets
+  output: assets
+content:
+- name: site
+  label: Conteúdo do site
+  type: file
+  path: _data/site.yml
+  format: yaml
+  fields:
+  - name: geral
+    label: Geral e contato
+    type: object
+    fields:
+    - name: titulo_aba
+      label: Título na aba do navegador
+      type: string
+    - name: descricao_google
+      label: Descrição para o Google e WhatsApp
+      type: text
+      description: Aparece quando alguém busca ou compartilha o link. Até ~155 caracteres.
+    - name: whatsapp
+      label: WhatsApp (só números)
+      type: string
+      description: 'Com 55 + DDD, sem espaços. Ex.: 5547984100096'
+      pattern:
+        regex: ^55\d{10,11}$
+        message: 'Use só números: 55 + DDD + número.'
+    - name: whatsapp_exibicao
+      label: WhatsApp como aparece no site
+      type: string
+      description: 'Ex.: (47) 98410-0096'
+    - name: mensagem_whatsapp
+      label: Primeira frase da mensagem no WhatsApp
+      type: string
+    - name: instagram
+      label: Instagram (sem @)
+      type: string
+      description: Deixe vazio para esconder.
+    - name: email
+      label: E-mail
+      type: string
+      description: Deixe vazio para esconder.
+    - name: cidade
+      label: Cidade
+      type: string
+    - name: botao_whatsapp
+      label: Texto do botão fixo do WhatsApp
+      type: string
+  - name: inicio
+    label: Início (topo do site)
+    type: object
+    fields:
+    - name: rotulo
+      label: Linha pequena acima do título
+      type: string
+    - name: titulo
+      label: Título grande
+      type: text
+      description: Cada linha vira uma linha no site.
+    - name: texto
+      label: Texto de apresentação
+      type: text
+      description: Use **assim** para deixar em negrito.
+    - name: botao_principal
+      label: Botão principal
+      type: string
+    - name: botao_secundario
+      label: Botão secundário
+      type: string
+    - name: legenda_fora
+      label: Legenda do primeiro vídeo
+      type: string
+    - name: legenda_dentro
+      label: Legenda do segundo vídeo
+      type: string
+    - name: ficha
+      label: Resumo (faixa com 4 itens)
+      type: object
+      fields:
+      - name: titulo
+        label: Título
+        type: string
+      - name: texto
+        label: Texto
+        type: string
+        description: Textos entre colchetes, tipo [INSERIR], aparecem destacados no site como pendência. Apague quando preencher.
+      list: true
+  - name: sobre
+    label: A Twice
+    type: object
+    fields:
+    - name: rotulo
+      label: Linha pequena
+      type: string
+    - name: titulo
+      label: Título
+      type: text
+    - name: paragrafos
+      label: Parágrafos
+      type: object
+      fields:
+      - name: texto
+        label: Texto
+        type: text
+        description: Use **assim** para deixar em negrito.
+      list: true
+    - name: foto1
+      label: Foto 1 (retrato)
+      type: image
+      description: Vertical, de preferência.
+    - name: foto1_nome
+      label: 'Foto 1: nome'
+      type: string
+    - name: foto1_legenda
+      label: 'Foto 1: legenda'
+      type: string
+    - name: foto2
+      label: Foto 2
+      type: image
+    - name: foto2_nome
+      label: 'Foto 2: nome'
+      type: string
+    - name: foto2_legenda
+      label: 'Foto 2: legenda'
+      type: string
+    - name: luisa_titulo
+      label: Título da apresentação da Luísa
+      type: string
+    - name: luisa_texto
+      label: Apresentação da Luísa
+      type: text
+      description: Deixe vazio para esconder. Textos entre colchetes, tipo [INSERIR], aparecem destacados no site como pendência. Apague quando preencher.
+    - name: frase_destaque
+      label: Frase em destaque
+      type: text
+      description: Use *assim* para sublinhar um trecho.
+  - name: servicos
+    label: Serviços
+    type: object
+    fields:
+    - name: rotulo
+      label: Linha pequena
+      type: string
+    - name: titulo
+      label: Título
+      type: text
+    - name: nota
+      label: Nota abaixo do título
+      type: text
+    - name: assinatura
+      label: Assinatura
+      type: string
+    - name: itens
+      label: Serviços
+      type: object
+      fields:
+      - name: nome
+        label: Nome do serviço
+        type: string
+      - name: para_quem
+        label: Para quem é
+        type: string
+      - name: descricao
+        label: Descrição
+        type: text
+        description: Use **assim** para deixar em negrito.
+      - name: capa
+        label: Capa do vídeo
+        type: image
+        description: Imagem vertical que aparece antes do vídeo carregar.
+      - name: previa
+        label: Vídeo curto (sem som)
+        type: file
+        description: Trecho de poucos segundos, vertical e leve.
+        options:
+          categories:
+          - video
+      list: true
+  - name: formatos
+    label: Formatos
+    type: object
+    fields:
+    - name: rotulo
+      label: Linha pequena
+      type: string
+    - name: titulo
+      label: Título
+      type: text
+    - name: subtitulo
+      label: Subtítulo
+      type: text
+    - name: texto
+      label: Texto
+      type: text
+    - name: itens
+      label: Formatos
+      type: object
+      fields:
+      - name: nome
+        label: Nome do formato
+        type: string
+        description: Textos entre colchetes, tipo [INSERIR], aparecem destacados no site como pendência. Apague quando preencher.
+      - name: descricao
+        label: Descrição
+        type: text
+        description: Deixe vazio para esconder. Textos entre colchetes, tipo [INSERIR], aparecem destacados no site como pendência. Apague quando preencher.
+      - name: capa
+        label: Capa do vídeo
+        type: image
+      - name: previa
+        label: Vídeo curto (sem som)
+        type: file
+        description: Opcional. Se vazio, usa o vídeo completo.
+        options:
+          categories:
+          - video
+      - name: video
+        label: Vídeo completo (com som)
+        type: file
+        options:
+          categories:
+          - video
+      list: true
+  - name: portfolio
+    label: Portfólio
+    type: object
+    fields:
+    - name: rotulo
+      label: Linha pequena
+      type: string
+    - name: titulo
+      label: Título
+      type: text
+    - name: nota
+      label: Nota ao lado do título
+      type: text
+    - name: mostrar_primeiros
+      label: Quantos vídeos aparecem antes do "Ver mais"
+      type: number
+    - name: botao_mais
+      label: Texto do botão "ver mais"
+      type: string
+    - name: itens
+      label: Trabalhos
+      type: object
+      list: true
+      description: Arraste para mudar a ordem.
+      fields:
+      - name: tipo
+        label: Tipo de projeto
+        type: string
+        description: 'Ex.: Cobertura de evento'
+      - name: cliente
+        label: Cliente
+        type: string
+        description: Deixe vazio para não mostrar. Textos entre colchetes, tipo [INSERIR], aparecem destacados no site como pendência. Apague quando preencher.
+      - name: capa
+        label: Capa do vídeo
+        type: image
+      - name: previa
+        label: Vídeo curto (sem som)
+        type: file
+        description: Opcional. Se vazio, usa o vídeo completo.
+        options:
+          categories:
+          - video
+      - name: video
+        label: Vídeo completo (com som)
+        type: file
+        options:
+          categories:
+          - video
+  - name: bastidores
+    label: Bastidores
+    type: object
+    fields:
+    - name: rotulo
+      label: Linha pequena
+      type: string
+    - name: titulo
+      label: Título
+      type: text
+    - name: texto
+      label: Texto
+      type: text
+    - name: fora_legenda
+      label: 'Vídeo 1: legenda'
+      type: string
+    - name: fora_capa
+      label: 'Vídeo 1: capa'
+      type: image
+    - name: fora_previa
+      label: 'Vídeo 1: trecho curto'
+      type: file
+      options:
+        categories:
+        - video
+    - name: fora_video
+      label: 'Vídeo 1: completo'
+      type: file
+      options:
+        categories:
+        - video
+    - name: dentro_legenda
+      label: 'Vídeo 2: legenda'
+      type: string
+    - name: dentro_capa
+      label: 'Vídeo 2: capa'
+      type: image
+    - name: dentro_previa
+      label: 'Vídeo 2: trecho curto'
+      type: file
+      options:
+        categories:
+        - video
+    - name: dentro_video
+      label: 'Vídeo 2: completo'
+      type: file
+      options:
+        categories:
+        - video
+  - name: como_funciona
+    label: Como funciona
+    type: object
+    fields:
+    - name: rotulo
+      label: Linha pequena
+      type: string
+    - name: titulo
+      label: Título
+      type: text
+    - name: passos
+      label: Passos
+      type: object
+      fields:
+      - name: titulo
+        label: Título
+        type: string
+      - name: texto
+        label: Texto
+        type: text
+        description: Textos entre colchetes, tipo [INSERIR], aparecem destacados no site como pendência. Apague quando preencher.
+      list: true
+  - name: perguntas
+    label: Perguntas frequentes
+    type: object
+    fields:
+    - name: rotulo
+      label: Linha pequena
+      type: string
+    - name: titulo
+      label: Título
+      type: text
+    - name: itens
+      label: Perguntas
+      type: object
+      fields:
+      - name: pergunta
+        label: Pergunta
+        type: string
+      - name: resposta
+        label: Resposta
+        type: text
+        description: Use **assim** para deixar em negrito. Textos entre colchetes, tipo [INSERIR], aparecem destacados no site como pendência. Apague quando preencher.
+      list: true
+  - name: criar
+    label: Vamos criar? (formulário)
+    type: object
+    fields:
+    - name: rotulo
+      label: Linha pequena
+      type: string
+    - name: titulo
+      label: Título
+      type: text
+    - name: frase
+      label: Frase
+      type: string
+    - name: dica
+      label: Texto abaixo
+      type: text
+    - name: botao
+      label: Texto do botão
+      type: string
+    - name: nota
+      label: Aviso abaixo do botão
+      type: text
+  - name: contato
+    label: Assinatura
+    type: object
+    fields:
+    - name: assinatura_nome
+      label: Nome
+      type: string
+    - name: assinatura_texto
+      label: Texto
+      type: string
+  - name: rodape
+    label: Rodapé
+    type: object
+    fields:
+    - name: linha1
+      label: Linha 1
+      type: string
+    - name: linha2
+      label: Linha 2
+      type: string
+    - name: link_condicoes
+      label: Link de "Condições e suporte"
+      type: string
+      description: Deixe vazio para esconder.
+    - name: link_privacidade
+      label: Link de "Política de Privacidade"
+      type: string
+      description: Deixe vazio para esconder.
+    - name: copyright
+      label: Texto de direitos autorais
+      type: string
