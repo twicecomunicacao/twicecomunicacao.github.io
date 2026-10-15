@@ -67,15 +67,15 @@ servicos:
   titulo: |-
     Do espontâneo
     ao planejado.
-  nota: Quatro jeitos de criar com a Twice. Nas descrições, quem fala é a Luísa.
+  nota: Quatro jeitos de criar com a Twice.
   assinatura: — Luísa Clara
   itens:
     - nome: Cobertura de eventos
-      para_quem: Para quem quer guardar o evento inteiro
-      descricao: Registro completo do evento, bastidores, detalhes e tudo aquilo que
-        faz parte da experiência. A ideia é criar um material completo e bem
-        pensado, que preserve a essência daquele momento e permita guardar essa
-        experiência para sempre.
+      para_quem: Para quem quer guardar o momento
+      descricao: Registro do evento, bastidores, detalhes e tudo aquilo que faz parte
+        da experiência. A ideia é criar um material completo e bem pensado, que
+        preserve a essência daquele momento e permita guardar essa experiência
+        para sempre.
       capa: assets/poster/v10.webp
       previa: assets/video/v10-p.mp4
     - nome: Videomaker
@@ -131,8 +131,7 @@ portfolio:
   titulo: |-
     Pela lente
     da Twice
-  nota: "Tudo filmado no celular, no formato em que as pessoas assistem: vertical.
-    Toque em um vídeo para ver com som."
+  nota: Toque em um vídeo para ver com som.
   mostrar_primeiros: 12
   botao_mais: Ver mais trabalhos
   itens:
