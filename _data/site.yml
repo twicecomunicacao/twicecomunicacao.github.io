@@ -111,9 +111,6 @@ formatos:
   itens:
     - nome: "[INSERIR NOME DO FORMATO]"
       descricao: "[INSERIR DESCRIÇÃO DO FORMATO]"
-      capa: assets/poster/v03.webp
-      previa: assets/video/v03-p.mp4
-      video: assets/video/v03.mp4
     - nome: "[INSERIR NOME DO FORMATO]"
       descricao: "[INSERIR DESCRIÇÃO DO FORMATO]"
       capa: assets/poster/v17.webp
