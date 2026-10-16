@@ -279,7 +279,10 @@ perguntas:
     - pergunta: Com quanto tempo de antecedência preciso reservar?
       resposta: "[INSERIR]"
     - pergunta: Como funciona o orçamento?
-      resposta: "[INSERIR — ex.: “cada projeto é orçado conforme o escopo”]"
+      resposta: Cada projeto tem suas particularidades, por isso o orçamento é
+        personalizado de acordo com o serviço escolhido, as necessidades e os
+        detalhes da produção. Entre em contato para conversarmos sobre sua ideia
+        e prepararmos uma proposta para você!
 criar:
   rotulo: 07 — Vamos criar?
   titulo: |-
@@ -288,8 +291,8 @@ criar:
   frase: Seu projeto. Nosso olhar.
   dica: Preencha em menos de um minuto. A mensagem chega pronta no WhatsApp da Twice.
   botao: Quero criar com a Twice
-  nota: Abre o WhatsApp com a sua mensagem pronta. Nada é enviado antes de você
-    tocar em enviar lá.
+  nota: Ao clicar, você será direcionado ao WhatsApp da Twice com sua mensagem
+    pronta para enviar!
 contato:
   assinatura_nome: Luísa Clara
   assinatura_texto: Videomaker • TWICE | Comunicação em dobro
