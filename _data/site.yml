@@ -110,8 +110,8 @@ formatos:
   texto: Cada projeto tem uma necessidade, uma linguagem e uma história. Aqui, um
     pouco de como a Twice dá vida a cada uma delas.
   itens:
-    - nome: "[INSERIR NOME DO FORMATO]"
-      descricao: "[INSERIR DESCRIÇÃO DO FORMATO]"
+    - nome: Cobertura de evento
+      descricao: Cobertura de palestra para BS contabilidade
     - nome: Produção do zero
       descricao: Da ideia à produção final
       capa: assets/poster/v17.webp
