@@ -117,7 +117,7 @@ formatos:
       previa: assets/video/v17-p.mp4
       video: assets/video/v17.mp4
     - nome: Produção do zero
-      descricao: Conteúdo criativo para divulgar marcas e promoções
+      descricao: Produção de conteúdo para o Agrobar SJP
       capa: assets/poster/v19.webp
       previa: assets/video/v19-p.mp4
       video: assets/video/v19.mp4
@@ -151,68 +151,69 @@ portfolio:
       capa: assets/poster/v14.webp
       previa: assets/video/v14-p.mp4
       video: assets/video/v14.mp4
-    - tipo: Bastidor de gravação de TV
-      cliente: "[INSERIR CLIENTE]"
+    - tipo: Cobertura de bastidores
+      cliente: Making of da participação de Vanessa no programa Empreenda com a Cris
       capa: assets/poster/v15.webp
       previa: assets/video/v15-p.mp4
       video: assets/video/v15.mp4
-    - tipo: Porta-voz em vídeo
-      cliente: "[INSERIR CLIENTE]"
+    - tipo: Produção do zero
+      cliente: Conteúdo desenvolvido do planejamento à edição para a Loop
       capa: assets/poster/v04.webp
       previa: assets/video/v04-p.mp4
       video: assets/video/v04.mp4
-    - tipo: Evento e show
-      cliente: "[INSERIR CLIENTE]"
+    - tipo: Cobertura de evento
+      cliente: Registros da participação da Rabisko com flash tattoos durante o evento
       capa: assets/poster/v16.webp
       previa: assets/video/v16-p.mp4
       video: assets/video/v16.mp4
-    - tipo: Esquete de humor
-      cliente: "[INSERIR CLIENTE]"
+    - tipo: Produção do zero
+      cliente: Produção para o Agrobar SJP, com participação como modelo
       capa: assets/poster/v07.webp
       previa: assets/video/v07-p.mp4
       video: assets/video/v07.mp4
-    - tipo: Processo de estúdio
-      cliente: "[INSERIR CLIENTE]"
+    - tipo: Cobertura de evento
+      cliente: Registros da participação da Rabisko com flash tattoos durante o evento
       capa: assets/poster/v18.webp
       previa: assets/video/v18-p.mp4
       video: assets/video/v18.mp4
-    - tipo: Cobertura de festa
-      cliente: "[INSERIR CLIENTE]"
+    - tipo: Aftermovie
+      cliente: Um registro dos destaques da festa
       capa: assets/poster/v03.webp
       previa: assets/video/v03-p.mp4
       video: assets/video/v03.mp4
-    - tipo: Processo em clínica
-      cliente: "[INSERIR CLIENTE]"
+    - tipo: Videomaker
+      cliente: Registro audiovisual de blefaroplastia superior e lip lift para a
+        People Brasil
       capa: assets/poster/v12.webp
       previa: assets/video/v12-p.mp4
       video: assets/video/v12.mp4
-    - tipo: Conteúdo em locação
-      cliente: "[INSERIR CLIENTE]"
+    - tipo: Produção do zero
+      cliente: Produção de conteúdo para o Agrobar SJP
       capa: assets/poster/v19.webp
       previa: assets/video/v19-p.mp4
       video: assets/video/v19.mp4
-    - tipo: Tour de espaço
-      cliente: "[INSERIR CLIENTE]"
+    - tipo: Videomaker
+      cliente: Uma visão completa do espaço em cada detalhe
       capa: assets/poster/v02.webp
       previa: assets/video/v02-p.mp4
       video: assets/video/v02.mp4
-    - tipo: Porta-voz em vídeo
-      cliente: "[INSERIR CLIENTE]"
+    - tipo: Produção do zero
+      cliente: Produção de conteúdo para a Loop
       capa: assets/poster/v05.webp
       previa: assets/video/v05-p.mp4
       video: assets/video/v05.mp4
     - tipo: Cobertura de evento
-      cliente: "[INSERIR CLIENTE]"
+      cliente: Registro da participação da Rabisko em evento com flash tattoos
       capa: assets/poster/v10.webp
       previa: assets/video/v10-p.mp4
       video: assets/video/v10.mp4
-    - tipo: Apresentação em locação
-      cliente: "[INSERIR CLIENTE]"
+    - tipo: Produção do zero
+      cliente: Direção criativa e produção audiovisual para uma nova fase do Agrobar SJP
       capa: assets/poster/v11.webp
       previa: assets/video/v11-p.mp4
       video: assets/video/v11.mp4
-    - tipo: Porta-voz em vídeo
-      cliente: "[INSERIR CLIENTE]"
+    - tipo: Produção do zero
+      cliente: Produção audiovisual desenvolvida para a Loop
       capa: assets/poster/v17.webp
       previa: assets/video/v17-p.mp4
       video: assets/video/v17.mp4
