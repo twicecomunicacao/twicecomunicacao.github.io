@@ -135,19 +135,19 @@ portfolio:
   mostrar_primeiros: 12
   botao_mais: Ver mais trabalhos
   itens:
-    - tipo: Aftermovie de evento
+    - tipo: Cobertura de evento
       cliente: Cobertura da palestra de Luciana, registrando os principais momentos do
         evento
       capa: assets/poster/v01.webp
       previa: assets/video/v01-p.mp4
       video: assets/video/v01.mp4
-    - tipo: Apresentação em locação
-      cliente: "[INSERIR CLIENTE]"
+    - tipo: "Vídeo publicitário "
+      cliente: Produção do zero para o Agrobar SJP, com participação como modelo
       capa: assets/poster/v06.webp
       previa: assets/video/v06-p.mp4
       video: assets/video/v06.mp4
     - tipo: Cobertura de evento
-      cliente: "[INSERIR CLIENTE]"
+      cliente: Registro da participação da Rabisko com flash tattoos durante o evento
       capa: assets/poster/v14.webp
       previa: assets/video/v14-p.mp4
       video: assets/video/v14.mp4
