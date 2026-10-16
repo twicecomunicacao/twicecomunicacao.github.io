@@ -217,11 +217,6 @@ portfolio:
       capa: assets/poster/v17.webp
       previa: assets/video/v17-p.mp4
       video: assets/video/v17.mp4
-    - tipo: Bastidor de palestra
-      cliente: "[INSERIR CLIENTE]"
-      capa: assets/poster/v08.webp
-      previa: assets/video/v08-p.mp4
-      video: assets/video/v08.mp4
     - tipo: Bastidor em clínica
       cliente: "[INSERIR CLIENTE]"
       capa: assets/poster/v09.webp
