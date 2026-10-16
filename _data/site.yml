@@ -222,15 +222,15 @@ portfolio:
       capa: assets/poster/v09.webp
       previa: assets/video/v09-p.mp4
       video: assets/video/v09.mp4
-    - tipo: Porta-voz em vídeo
-      cliente: "[INSERIR CLIENTE]"
+    - tipo: Videomaker
+      cliente: Captação e edição de conteúdo para a People Brasil
       capa: assets/poster/v20.webp
       previa: assets/video/v20-p.mp4
       video: assets/video/v20.mp4
 bastidores:
   rotulo: Bastidores
   titulo: A Twice em ação
-  texto: A Luísa filmando um evento e um vídeo já finalizado.
+  texto: Dos bastidores ao conteúdo final
   fora_legenda: fora da tela
   fora_capa: assets/poster/v21.webp
   fora_previa: assets/video/v21-p.mp4
@@ -244,13 +244,13 @@ como_funciona:
   titulo: Como funciona
   passos:
     - titulo: Conversa
-      texto: Você conta o que precisa e para quê. Entendemos o objetivo.
+      texto: Você conta o que precisa e o que deseja alcançar.
     - titulo: Proposta
-      texto: Definimos juntos a linguagem e o formato do vídeo.
+      texto: Alinhamos a proposta e definimos o formato ideal para o seu projeto
     - titulo: Captação
-      texto: O registro no dia, no celular, do jeito combinado.
+      texto: Tudo pronto para transformar o que foi planejado em conteúdo
     - titulo: Edição e entrega
-      texto: Você recebe o material pronto. [INSERIR PRAZO DE ENTREGA]
+      texto: Você recebe o material finalizado dentro do prazo combinado
 perguntas:
   rotulo: "06"
   titulo: Perguntas frequentes
