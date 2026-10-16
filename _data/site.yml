@@ -29,7 +29,7 @@ inicio:
     - titulo: Para quem
       texto: Marcas, eventos e pessoas
     - titulo: Onde
-      texto: "Curitiba, Paraná [INSERIR: atende outras cidades?]"
+      texto: Curitiba e outras localidades sob consulta
 sobre:
   rotulo: 01 — A Twice
   titulo: Comunicação em dobro.
@@ -111,18 +111,18 @@ formatos:
   itens:
     - nome: "[INSERIR NOME DO FORMATO]"
       descricao: "[INSERIR DESCRIÇÃO DO FORMATO]"
-    - nome: "[INSERIR NOME DO FORMATO]"
-      descricao: "[INSERIR DESCRIÇÃO DO FORMATO]"
+    - nome: Produção do zero
+      descricao: Da ideia à produção final
       capa: assets/poster/v17.webp
       previa: assets/video/v17-p.mp4
       video: assets/video/v17.mp4
-    - nome: "[INSERIR NOME DO FORMATO]"
-      descricao: "[INSERIR DESCRIÇÃO DO FORMATO]"
+    - nome: Produção do zero
+      descricao: Conteúdo criativo para divulgar marcas e promoções
       capa: assets/poster/v19.webp
       previa: assets/video/v19-p.mp4
       video: assets/video/v19.mp4
-    - nome: "[INSERIR NOME DO FORMATO]"
-      descricao: "[INSERIR DESCRIÇÃO DO FORMATO]"
+    - nome: Videomaker
+      descricao: Uma visão completa do espaço em cada detalhe
       capa: assets/poster/v02.webp
       previa: assets/video/v02-p.mp4
       video: assets/video/v02.mp4
@@ -136,7 +136,8 @@ portfolio:
   botao_mais: Ver mais trabalhos
   itens:
     - tipo: Aftermovie de evento
-      cliente: "[INSERIR CLIENTE]"
+      cliente: Cobertura da palestra de Luciana, registrando os principais momentos do
+        evento
       capa: assets/poster/v01.webp
       previa: assets/video/v01-p.mp4
       video: assets/video/v01.mp4
