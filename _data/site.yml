@@ -137,11 +137,8 @@ portfolio:
   botao_mais: Ver mais trabalhos
   itens:
     - tipo: Cobertura de evento
-      cliente: Cobertura da palestra de Luciana, registrando os principais momentos do
-        evento
-      capa: assets/poster/v01.webp
-      previa: assets/video/v01-p.mp4
-      video: assets/video/v01.mp4
+      cliente: "Cobertura para Audrey no flash tattoo, registrando os principais
+        momentos "
     - tipo: "Vídeo publicitário "
       cliente: Produção do zero para o Agrobar SJP, com participação como modelo
       capa: assets/poster/v06.webp
