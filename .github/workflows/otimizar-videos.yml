@@ -1,0 +1,87 @@
+# Comprime os vídeos enviados pelo painel e cria a prévia (sem som) e a capa de cada um.
+# Roda sozinho sempre que algo novo chega em assets/uploads.
+name: Otimizar vídeos
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "assets/uploads/**"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  pages: write
+
+concurrency:
+  group: otimizar-videos
+  cancel-in-progress: false
+
+jobs:
+  otimizar:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Instalar ffmpeg
+        run: sudo apt-get update -qq && sudo apt-get install -y -qq ffmpeg
+
+      - name: Comprimir e gerar prévias
+        run: |
+          set -e
+          shopt -s nullglob nocaseglob
+          mudou=0
+          for f in assets/uploads/*.mp4 assets/uploads/*.mov assets/uploads/*.m4v assets/uploads/*.webm; do
+            case "$f" in *-previa.mp4) continue;; esac
+            base="${f%.*}"
+            ext="${f##*.}"
+            final="$base.mp4"
+
+            codec=$(ffprobe -v error -select_streams v:0 -show_entries stream=codec_name -of csv=p=0 "$f" || echo "")
+            altura=$(ffprobe -v error -select_streams v:0 -show_entries stream=height,width -of csv=s=x:p=0 "$f" | awk -Fx '{print ($1>$2)?$1:$2}')
+            taxa=$(ffprobe -v error -show_entries format=bit_rate -of csv=p=0 "$f" || echo 99999999)
+            [ "$taxa" = "N/A" ] && taxa=99999999
+
+            if [ "${ext,,}" != "mp4" ] || [ "$codec" != "h264" ] || [ "${altura:-9999}" -gt 1280 ] || [ "$taxa" -gt 3000000 ]; then
+              echo "Comprimindo $f"
+              ffmpeg -v error -y -i "$f" \
+                -vf "scale='if(gt(iw,ih),-2,min(720,iw))':'if(gt(iw,ih),min(720,ih),-2)'" \
+                -c:v libx264 -preset slow -crf 27 -maxrate 2000k -bufsize 4000k -pix_fmt yuv420p \
+                -c:a aac -b:a 96k -ac 2 -movflags +faststart "$base.tmp.mp4"
+              if [ "$f" != "$final" ]; then
+                git rm -q "$f"
+                # atualiza o caminho no conteúdo do site (.mov -> .mp4)
+                antigo="/${f}"; novo="/${final}"
+                sed -i "s#${antigo}#${novo}#g; s#${f}#${final}#g" _data/site.yml
+              fi
+              mv "$base.tmp.mp4" "$final"
+              mudou=1
+            fi
+
+            if [ ! -f "$base-previa.mp4" ]; then
+              dur=$(ffprobe -v error -show_entries format=duration -of csv=p=0 "$final")
+              ini=$(awk -v d="$dur" 'BEGIN{s=d*0.25; if (d-s<6) s=d-6; if (s<0) s=0; printf "%.2f", s}')
+              ffmpeg -v error -y -ss "$ini" -i "$final" -t 6 -an \
+                -vf "scale=360:640:force_original_aspect_ratio=increase,crop=360:640,fps=24" \
+                -c:v libx264 -preset slow -crf 30 -pix_fmt yuv420p -movflags +faststart "$base-previa.mp4"
+              ffmpeg -v error -y -ss "$ini" -i "$final" -frames:v 1 \
+                -vf "scale=540:960:force_original_aspect_ratio=increase,crop=540:960" -q:v 4 "$base-capa.jpg"
+              mudou=1
+            fi
+          done
+          echo "mudou=$mudou" >> "$GITHUB_ENV"
+
+      - name: Salvar no repositório
+        if: env.mudou == '1'
+        run: |
+          git config user.name "twice-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -A assets/uploads _data/site.yml
+          git commit -m "Otimiza vídeos enviados pelo painel"
+          git push
+
+      - name: Atualizar o site
+        if: env.mudou == '1'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X POST "repos/${{ github.repository }}/pages/builds" || true
