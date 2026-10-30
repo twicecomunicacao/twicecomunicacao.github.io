@@ -1,0 +1,566 @@
+# Painel de edição do site da Twice (Sveltia CMS). Endereço: /admin/
+backend:
+  name: github
+  repo: twicecomunicacao/twicecomunicacao.github.io
+  branch: main
+  auth_methods:
+  - token
+  commit_messages:
+    update: Atualiza {{path}} (painel)
+    uploadMedia: Envia {{path}} (painel)
+    deleteMedia: Remove {{path}} (painel)
+app_title: Painel Twice
+site_url: https://twicecomunicacao.github.io
+display_url: https://twicecomunicacao.github.io
+logo:
+  src: /assets/img/favicon.png
+media_folder: assets/uploads
+public_folder: /assets/uploads
+media_libraries:
+  default:
+    config:
+      max_file_size: 95000000
+      transformations:
+        raster_image:
+          format: webp
+          quality: 82
+          width: 1600
+          height: 1600
+collections:
+- name: site
+  label: Conteúdo do site
+  files:
+  - name: site
+    label: Conteúdo do site
+    file: _data/site.yml
+    fields:
+    - name: geral
+      label: Geral e contato
+      widget: object
+      fields:
+      - name: titulo_aba
+        label: Título na aba do navegador
+        widget: string
+        required: false
+      - name: descricao_google
+        label: Descrição para o Google e WhatsApp
+        widget: text
+        hint: Aparece quando alguém busca ou compartilha o link. Até ~155 caracteres.
+        required: false
+      - name: whatsapp
+        label: WhatsApp (só números)
+        widget: string
+        hint: 'Com 55 + DDD, sem espaços. Ex.: 5547984100096'
+        pattern:
+        - ^55\d{10,11}$
+        - 'Use só números: 55 + DDD + número.'
+        required: false
+      - name: whatsapp_exibicao
+        label: WhatsApp como aparece no site
+        widget: string
+        hint: 'Ex.: (47) 98410-0096'
+        required: false
+      - name: mensagem_whatsapp
+        label: Primeira frase da mensagem no WhatsApp
+        widget: string
+        required: false
+      - name: instagram
+        label: Instagram (sem @)
+        widget: string
+        hint: Deixe vazio para esconder.
+        required: false
+      - name: email
+        label: E-mail
+        widget: string
+        hint: Deixe vazio para esconder.
+        required: false
+      - name: cidade
+        label: Cidade
+        widget: string
+        required: false
+      - name: botao_whatsapp
+        label: Texto do botão fixo do WhatsApp
+        widget: string
+        required: false
+      collapsed: true
+      required: false
+    - name: inicio
+      label: Início (topo do site)
+      widget: object
+      fields:
+      - name: rotulo
+        label: Linha pequena acima do título
+        widget: string
+        required: false
+      - name: titulo
+        label: Título grande
+        widget: text
+        hint: Cada linha vira uma linha no site.
+        required: false
+      - name: texto
+        label: Texto de apresentação
+        widget: text
+        hint: Use **assim** para deixar em negrito.
+        required: false
+      - name: botao_principal
+        label: Botão principal
+        widget: string
+        required: false
+      - name: botao_secundario
+        label: Botão secundário
+        widget: string
+        required: false
+      - name: legenda_fora
+        label: Legenda do primeiro vídeo
+        widget: string
+        required: false
+      - name: legenda_dentro
+        label: Legenda do segundo vídeo
+        widget: string
+        required: false
+      - name: ficha
+        label: Resumo (faixa com 4 itens)
+        widget: list
+        fields:
+        - name: titulo
+          label: Título
+          widget: string
+          required: false
+        - name: texto
+          label: Texto
+          widget: string
+          hint: Textos entre colchetes, tipo [INSERIR], aparecem destacados no site como pendência. Apague quando preencher.
+          required: false
+        summary: '{{fields.titulo}}'
+        collapsed: true
+        required: false
+      collapsed: true
+      required: false
+    - name: sobre
+      label: A Twice
+      widget: object
+      fields:
+      - name: rotulo
+        label: Linha pequena
+        widget: string
+        required: false
+      - name: titulo
+        label: Título
+        widget: text
+        required: false
+      - name: paragrafos
+        label: Parágrafos
+        widget: list
+        fields:
+        - name: texto
+          label: Texto
+          widget: text
+          hint: Use **assim** para deixar em negrito.
+          required: false
+        summary: '{{fields.texto}}'
+        collapsed: true
+        required: false
+      - name: foto1
+        label: Foto 1 (retrato)
+        widget: image
+        hint: Vertical, de preferência.
+        required: false
+      - name: foto1_nome
+        label: 'Foto 1: nome'
+        widget: string
+        required: false
+      - name: foto1_legenda
+        label: 'Foto 1: legenda'
+        widget: string
+        required: false
+      - name: foto2
+        label: Foto 2
+        widget: image
+        required: false
+      - name: foto2_nome
+        label: 'Foto 2: nome'
+        widget: string
+        required: false
+      - name: foto2_legenda
+        label: 'Foto 2: legenda'
+        widget: string
+        required: false
+      - name: luisa_titulo
+        label: Título da apresentação da Luísa
+        widget: string
+        required: false
+      - name: luisa_texto
+        label: Apresentação da Luísa
+        widget: text
+        hint: Deixe vazio para esconder. Textos entre colchetes, tipo [INSERIR], aparecem destacados no site como pendência. Apague quando preencher.
+        required: false
+      - name: frase_destaque
+        label: Frase em destaque
+        widget: text
+        hint: Use *assim* para sublinhar um trecho.
+        required: false
+      collapsed: true
+      required: false
+    - name: servicos
+      label: Serviços
+      widget: object
+      fields:
+      - name: rotulo
+        label: Linha pequena
+        widget: string
+        required: false
+      - name: titulo
+        label: Título
+        widget: text
+        required: false
+      - name: nota
+        label: Nota abaixo do título
+        widget: text
+        required: false
+      - name: assinatura
+        label: Assinatura
+        widget: string
+        required: false
+      - name: itens
+        label: Serviços
+        widget: list
+        fields:
+        - name: nome
+          label: Nome do serviço
+          widget: string
+          required: false
+        - name: para_quem
+          label: Para quem é
+          widget: string
+          required: false
+        - name: descricao
+          label: Descrição
+          widget: text
+          hint: Use **assim** para deixar em negrito.
+          required: false
+        - name: capa
+          label: Capa do vídeo
+          widget: image
+          hint: Opcional. Se ficar vazio, o site cria sozinho a partir do vídeo completo.
+          required: false
+        - name: previa
+          label: Vídeo do serviço (toca sem som)
+          widget: file
+          accept: video/*
+          hint: 'MP4 ou MOV, vertical. Pode subir o arquivo original: o site comprime e cria a versão curta sozinho.'
+          required: false
+        summary: '{{fields.nome}}'
+        collapsed: true
+        required: false
+      collapsed: true
+      required: false
+    - name: formatos
+      label: Formatos
+      widget: object
+      fields:
+      - name: rotulo
+        label: Linha pequena
+        widget: string
+        required: false
+      - name: titulo
+        label: Título
+        widget: text
+        required: false
+      - name: subtitulo
+        label: Subtítulo
+        widget: text
+        required: false
+      - name: texto
+        label: Texto
+        widget: text
+        required: false
+      - name: itens
+        label: Formatos
+        widget: list
+        fields:
+        - name: nome
+          label: Nome do formato
+          widget: string
+          hint: Textos entre colchetes, tipo [INSERIR], aparecem destacados no site como pendência. Apague quando preencher.
+          required: false
+        - name: descricao
+          label: Descrição
+          widget: text
+          hint: Deixe vazio para esconder. Textos entre colchetes, tipo [INSERIR], aparecem destacados no site como pendência. Apague quando preencher.
+          required: false
+        - name: capa
+          label: Capa do vídeo
+          widget: image
+          hint: Opcional. Se ficar vazio, o site cria sozinho a partir do vídeo completo.
+          required: false
+        - name: previa
+          label: Vídeo curto (sem som)
+          widget: file
+          accept: video/*
+          hint: Opcional. Se ficar vazio, o site cria sozinho a partir do vídeo completo.
+          required: false
+        - name: video
+          label: Vídeo completo (com som)
+          widget: file
+          accept: video/*
+          hint: 'MP4 ou MOV, vertical. Pode subir o arquivo original: o site comprime sozinho em alguns minutos.'
+          required: false
+        summary: '{{fields.nome}}'
+        collapsed: true
+        required: false
+      collapsed: true
+      required: false
+    - name: portfolio
+      label: Portfólio
+      widget: object
+      fields:
+      - name: rotulo
+        label: Linha pequena
+        widget: string
+        required: false
+      - name: titulo
+        label: Título
+        widget: text
+        required: false
+      - name: nota
+        label: Nota ao lado do título
+        widget: text
+        required: false
+      - name: mostrar_primeiros
+        label: Quantos vídeos aparecem antes do "Ver mais"
+        widget: number
+        value_type: int
+        required: false
+      - name: botao_mais
+        label: Texto do botão "ver mais"
+        widget: string
+        required: false
+      - name: itens
+        label: Trabalhos
+        widget: list
+        fields:
+        - name: tipo
+          label: Tipo de projeto
+          widget: string
+          hint: 'Ex.: Cobertura de evento'
+          required: false
+        - name: cliente
+          label: Cliente
+          widget: string
+          hint: Deixe vazio para não mostrar. Textos entre colchetes, tipo [INSERIR], aparecem destacados no site como pendência. Apague quando preencher.
+          required: false
+        - name: capa
+          label: Capa do vídeo
+          widget: image
+          hint: Opcional. Se ficar vazio, o site cria sozinho a partir do vídeo completo.
+          required: false
+        - name: previa
+          label: Vídeo curto (sem som)
+          widget: file
+          accept: video/*
+          hint: Opcional. Se ficar vazio, o site cria sozinho a partir do vídeo completo.
+          required: false
+        - name: video
+          label: Vídeo completo (com som)
+          widget: file
+          accept: video/*
+          hint: 'MP4 ou MOV, vertical. Pode subir o arquivo original: o site comprime sozinho em alguns minutos.'
+          required: false
+        summary: '{{fields.tipo}}: {{fields.cliente}}'
+        collapsed: true
+        hint: Arraste para mudar a ordem.
+        required: false
+      collapsed: true
+      required: false
+    - name: bastidores
+      label: Bastidores
+      widget: object
+      fields:
+      - name: rotulo
+        label: Linha pequena
+        widget: string
+        required: false
+      - name: titulo
+        label: Título
+        widget: text
+        required: false
+      - name: texto
+        label: Texto
+        widget: text
+        required: false
+      - name: fora_legenda
+        label: 'Vídeo 1: legenda'
+        widget: string
+        required: false
+      - name: fora_capa
+        label: 'Vídeo 1: capa'
+        widget: image
+        hint: Opcional. Se ficar vazio, o site cria sozinho a partir do vídeo completo.
+        required: false
+      - name: fora_previa
+        label: 'Vídeo 1: trecho curto'
+        widget: file
+        accept: video/*
+        hint: Trecho curto sem som. Opcional. Se ficar vazio, o site cria sozinho a partir do vídeo completo.
+        required: false
+      - name: fora_video
+        label: 'Vídeo 1: completo'
+        widget: file
+        accept: video/*
+        hint: 'MP4 ou MOV, vertical. Pode subir o arquivo original: o site comprime sozinho em alguns minutos.'
+        required: false
+      - name: dentro_legenda
+        label: 'Vídeo 2: legenda'
+        widget: string
+        required: false
+      - name: dentro_capa
+        label: 'Vídeo 2: capa'
+        widget: image
+        hint: Opcional. Se ficar vazio, o site cria sozinho a partir do vídeo completo.
+        required: false
+      - name: dentro_previa
+        label: 'Vídeo 2: trecho curto'
+        widget: file
+        accept: video/*
+        hint: Trecho curto sem som. Opcional. Se ficar vazio, o site cria sozinho a partir do vídeo completo.
+        required: false
+      - name: dentro_video
+        label: 'Vídeo 2: completo'
+        widget: file
+        accept: video/*
+        hint: 'MP4 ou MOV, vertical. Pode subir o arquivo original: o site comprime sozinho em alguns minutos.'
+        required: false
+      collapsed: true
+      required: false
+    - name: como_funciona
+      label: Como funciona
+      widget: object
+      fields:
+      - name: rotulo
+        label: Linha pequena
+        widget: string
+        required: false
+      - name: titulo
+        label: Título
+        widget: text
+        required: false
+      - name: passos
+        label: Passos
+        widget: list
+        fields:
+        - name: titulo
+          label: Título
+          widget: string
+          required: false
+        - name: texto
+          label: Texto
+          widget: text
+          hint: Textos entre colchetes, tipo [INSERIR], aparecem destacados no site como pendência. Apague quando preencher.
+          required: false
+        summary: '{{fields.titulo}}'
+        collapsed: true
+        required: false
+      collapsed: true
+      required: false
+    - name: perguntas
+      label: Perguntas frequentes
+      widget: object
+      fields:
+      - name: rotulo
+        label: Linha pequena
+        widget: string
+        required: false
+      - name: titulo
+        label: Título
+        widget: text
+        required: false
+      - name: itens
+        label: Perguntas
+        widget: list
+        fields:
+        - name: pergunta
+          label: Pergunta
+          widget: string
+          required: false
+        - name: resposta
+          label: Resposta
+          widget: text
+          hint: Use **assim** para deixar em negrito. Textos entre colchetes, tipo [INSERIR], aparecem destacados no site como pendência. Apague quando preencher.
+          required: false
+        summary: '{{fields.pergunta}}'
+        collapsed: true
+        required: false
+      collapsed: true
+      required: false
+    - name: criar
+      label: Vamos criar? (formulário)
+      widget: object
+      fields:
+      - name: rotulo
+        label: Linha pequena
+        widget: string
+        required: false
+      - name: titulo
+        label: Título
+        widget: text
+        required: false
+      - name: frase
+        label: Frase
+        widget: string
+        required: false
+      - name: dica
+        label: Texto abaixo
+        widget: text
+        required: false
+      - name: botao
+        label: Texto do botão
+        widget: string
+        required: false
+      - name: nota
+        label: Aviso abaixo do botão
+        widget: text
+        required: false
+      collapsed: true
+      required: false
+    - name: contato
+      label: Assinatura
+      widget: object
+      fields:
+      - name: assinatura_nome
+        label: Nome
+        widget: string
+        required: false
+      - name: assinatura_texto
+        label: Texto
+        widget: string
+        required: false
+      collapsed: true
+      required: false
+    - name: rodape
+      label: Rodapé
+      widget: object
+      fields:
+      - name: linha1
+        label: Linha 1
+        widget: string
+        required: false
+      - name: linha2
+        label: Linha 2
+        widget: string
+        required: false
+      - name: link_condicoes
+        label: Link de "Condições e suporte"
+        widget: string
+        hint: Deixe vazio para esconder.
+        required: false
+      - name: link_privacidade
+        label: Link de "Política de Privacidade"
+        widget: string
+        hint: Deixe vazio para esconder.
+        required: false
+      - name: copyright
+        label: Texto de direitos autorais
+        widget: string
+        required: false
+      collapsed: true
+      required: false
