@@ -1,0 +1,22 @@
+{%- comment -%}
+Resolve vídeo, prévia e capa de um item. Recebe v (vídeo completo), p (prévia) e c (capa).
+Para arquivos enviados pelo painel (assets/uploads), a prévia e a capa são geradas
+automaticamente com o mesmo nome do vídeo: nome-previa.mp4 e nome-capa.jpg.
+Define: m_video, m_prev, m_capa.
+{%- endcomment -%}
+{%- assign m_video = include.v | default: '' -%}
+{%- assign m_prev = include.p | default: '' -%}
+{%- assign m_capa = include.c | default: '' -%}
+{%- assign m_fonte = m_video -%}
+{%- if m_fonte == '' -%}{%- assign m_fonte = m_prev -%}{%- endif -%}
+{%- if m_fonte contains 'assets/uploads/' -%}
+  {%- assign m_partes = m_fonte | split: '.' -%}
+  {%- assign m_base = m_partes | pop | join: '.' -%}
+  {%- assign m_base = m_base | remove: '-previa' -%}
+  {%- if m_prev == '' or m_prev contains 'assets/uploads/' -%}
+    {%- unless m_prev contains '-previa.mp4' -%}{%- assign m_prev = m_base | append: '-previa.mp4' -%}{%- endunless -%}
+  {%- endif -%}
+  {%- if m_capa == '' -%}{%- assign m_capa = m_base | append: '-capa.jpg' -%}{%- endif -%}
+{%- endif -%}
+{%- if m_prev == '' -%}{%- assign m_prev = m_video -%}{%- endif -%}
+{%- if m_video == '' -%}{%- assign m_video = m_prev -%}{%- endif -%}
