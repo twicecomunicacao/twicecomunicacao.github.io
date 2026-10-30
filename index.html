@@ -130,7 +130,7 @@
     {%- if s.luisa_texto != blank %}
     <div class="about__luisa reveal">
       <p class="label">{{ s.luisa_titulo | escape }}</p>
-      <p>{% include md.html v=s.luisa_texto %}</p>
+      <div class="about__luisa-txt">{{ s.luisa_texto | markdownify | replace: '[', '<span class="ph">[' | replace: ']', ']</span>' }}</div>
     </div>
     {%- endif %}
   </div>
