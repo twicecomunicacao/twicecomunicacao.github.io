@@ -151,7 +151,9 @@ p{margin:0 0 1em}
 .about__luisa-txt p{margin:0 0 1em}
 .about__luisa-txt p:last-child{margin-bottom:0}
 @media (min-width:960px){
-  .about{grid-template-columns:1fr 1fr;grid-template-rows:auto 1fr;row-gap:clamp(28px, 3vw, 44px);align-items:start}
+  .about{grid-template-columns:1fr 1fr;grid-template-rows:auto 1fr;row-gap:28px;align-items:start}
+  .about__text p:last-child{margin-bottom:0}
+  .about__pair{align-self:center}
   .about__pair{grid-row:span 2}
   .about__luisa{grid-column:1}
 }
