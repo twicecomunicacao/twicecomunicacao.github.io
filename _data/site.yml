@@ -1,9 +1,7 @@
 geral:
   titulo_aba: Twice | Comunicação em dobro — Produção de vídeo mobile
-  descricao_google: "Produção de vídeo mobile em Curitiba: cobertura de eventos,
-    videomaker, storymaker e produção do zero. Conectando momentos para marcas,
-    eventos e pessoas."
-  whatsapp: "5547984100096"
+  descricao_google: 'Produção de vídeo mobile em Curitiba: cobertura de eventos, videomaker, storymaker e produção do zero. Conectando momentos para marcas, eventos e pessoas.'
+  whatsapp: '5547984100096'
   whatsapp_exibicao: (47) 98410-0096
   mensagem_whatsapp: Olá! Vim pelo site da Twice.
   instagram: twicecomunicacao
@@ -15,9 +13,7 @@ inicio:
   titulo: |-
     Conectando
     momentos.
-  texto: Registramos momentos para marcas, eventos e pessoas. Seja para comunicar
-    uma história, um projeto ou guardar para sempre aquilo que merece ser
-    lembrado.
+  texto: Registramos momentos para marcas, eventos e pessoas. Seja para comunicar uma história, um projeto ou guardar para sempre aquilo que merece ser lembrado.
   botao_principal: Vamos criar?
   botao_secundario: Ver portfólio
   legenda_fora: fora da tela
@@ -35,12 +31,8 @@ sobre:
   rotulo: 01 — A Twice
   titulo: Comunicação em dobro.
   paragrafos:
-    - texto: "A Twice trabalha com produção de vídeos, **de forma mobile**, para
-        diferentes objetivos: desde a cobertura espontânea de um evento até
-        conteúdos planejados, do roteiro à edição."
-    - texto: Cada projeto ganha uma linguagem própria, pensada para a marca, para o
-        público e para sua finalidade, seja para comunicar, divulgar ou
-        simplesmente guardar um momento.
+    - texto: 'A Twice trabalha com produção de vídeos, **de forma mobile**, para diferentes objetivos: desde a cobertura espontânea de um evento até conteúdos planejados, do roteiro à edição.'
+    - texto: Cada projeto ganha uma linguagem própria, pensada para a marca, para o público e para sua finalidade, seja para comunicar, divulgar ou simplesmente guardar um momento.
   foto1: assets/img/img_6819.webp
   foto1_nome: Luísa Clara
   foto1_legenda: Videomaker
@@ -48,21 +40,13 @@ sobre:
   foto2_nome: Twice
   foto2_legenda: Comunicação em dobro
   luisa_titulo: Quem está por trás
-  luisa_texto: >-
+  luisa_texto: |-
     Prazer, eu sou a Luísa!
 
+    Apaixonada por comunicacao e pelas diferentes formas de contar histórias, encontrei no universo audiovisual uma maneira de unir criatividade e meu interesse pela comunicação.
 
-    Apaixonada por comunicacao e pelas diferentes formas de contar histórias,
-    encontrei no universo audiovisual uma maneira de unir criatividade e meu
-    interesse pela comunicação.
-
-
-    Formada em Comunicação pela Universidade Federal do Paraná (UFPR) e
-    pós-graduada em Comunicação Digital pela PUC. Hoje, através da produção de
-    vídeos, uno conhecimento e criatividade para dar vida a projetos que
-    carregam histórias, propósitos e pessoas.
-  frase_destaque: Um olhar criativo para o que acontece *fora da tela* fazer
-    sentido *dentro dela*.
+    Formada em Comunicação pela Universidade Federal do Paraná (UFPR) e pós-graduada em Comunicação Digital pela PUC. Hoje, através da produção de vídeos, uno conhecimento e criatividade para dar vida a projetos que carregam histórias, propósitos e pessoas.
+  frase_destaque: Um olhar criativo para o que acontece *fora da tela* fazer sentido *dentro dela*.
 servicos:
   rotulo: 02 — Serviços
   titulo: |-
@@ -73,45 +57,35 @@ servicos:
   itens:
     - nome: Cobertura de eventos
       para_quem: Para quem quer guardar o momento
-      descricao: Registro do evento, bastidores, detalhes e tudo aquilo que faz parte
-        da experiência. A ideia é criar um material completo e bem pensado, que
-        preserve a essência daquele momento e permita guardar essa experiência
-        para sempre.
+      descricao: Registro do evento, bastidores, detalhes e tudo aquilo que faz parte da experiência. A ideia é criar um material completo e bem pensado, que preserve a essência daquele momento e permita guardar essa experiência para sempre.
       capa: assets/poster/v10.webp
       previa: assets/video/v10-p.mp4
     - nome: Videomaker
       para_quem: Para quem já tem a ideia
-      descricao: Você já tem a ideia e sabe o que precisa ser feito? Eu cuido da
-        captação e da edição, seguindo a proposta que você definiu para o vídeo,
-        e te entrego o material pronto.
+      descricao: Você já tem a ideia e sabe o que precisa ser feito? Eu cuido da captação e da edição, seguindo a proposta que você definiu para o vídeo, e te entrego o material pronto.
       capa: assets/poster/v04.webp
       previa: assets/video/v04-p.mp4
     - nome: Storymaker - cobertura real time
       para_quem: Para quem quer o público junto, enquanto acontece
-      descricao: Produção de conteúdo em tempo real, pensando no que merece aparecer
-        nos stories enquanto tudo acontece. Registros espontâneos, dinâmicos e
-        naturais, com uma sequência que mantém o público conectado ao evento e à
-        experiência de quem está ali.
+      descricao: Produção de conteúdo em tempo real, pensando no que merece aparecer nos stories enquanto tudo acontece. Registros espontâneos, dinâmicos e naturais, com uma sequência que mantém o público conectado ao evento e à experiência de quem está ali.
       capa: assets/poster/v16.webp
       previa: assets/video/v16-p.mp4
     - nome: Produção do zero
       para_quem: Para quem ainda não sabe por onde começar
-      descricao: Você sabe que precisa comunicar algo, mas não sabe como transformar
-        isso em vídeo? Eu desenvolvo a ideia, o roteiro e a direção e cuido de
-        toda a produção, da captação à edição. Quando a proposta pede, também
-        participo do vídeo como modelo.
+      descricao: Você sabe que precisa comunicar algo, mas não sabe como transformar isso em vídeo? Eu desenvolvo a ideia, o roteiro e a direção e cuido de toda a produção, da captação à edição. Quando a proposta pede, também participo do vídeo como modelo.
       capa: assets/poster/v06.webp
       previa: assets/video/v06-p.mp4
 formatos:
   rotulo: 03 — Formatos
   titulo: Cada projeto é único
-  subtitulo: Para cada objetivo, um jeito de criar. A Twice se adapta ao que cada
-    projeto pede.
-  texto: Cada projeto tem uma necessidade, uma linguagem e uma história. Aqui, um
-    pouco de como a Twice dá vida a cada uma delas.
+  subtitulo: Para cada objetivo, um jeito de criar. A Twice se adapta ao que cada projeto pede.
+  texto: Cada projeto tem uma necessidade, uma linguagem e uma história. Aqui, um pouco de como a Twice dá vida a cada uma delas.
   itens:
     - nome: Cobertura de evento
       descricao: Cobertura de palestra para BS contabilidade
+      capa: /assets/uploads/capa-9716.webp
+      previa: /assets/uploads/previa-9716.mp4
+      video: /assets/uploads/video-9716.mp4
     - nome: Produção do zero
       descricao: Da ideia à produção final
       capa: assets/poster/v17.webp
@@ -137,9 +111,11 @@ portfolio:
   botao_mais: Ver mais trabalhos
   itens:
     - tipo: Cobertura de evento
-      cliente: "Cobertura para Audrey no flash tattoo, registrando os principais
-        momentos "
-    - tipo: "Vídeo publicitário "
+      cliente: Cobertura para Audrey no flash tattoo, registrando os principais momentos
+      capa: ''
+      previa: ''
+      video: ''
+    - tipo: Vídeo publicitário
       cliente: Produção do zero para o Agrobar SJP, com participação como modelo
       capa: assets/poster/v06.webp
       previa: assets/video/v06-p.mp4
@@ -180,8 +156,7 @@ portfolio:
       previa: assets/previa-9716.mp4
       video: assets/video-9716.mp4
     - tipo: Videomaker
-      cliente: Registro audiovisual de blefaroplastia superior e lip lift para a
-        People Brasil
+      cliente: Registro audiovisual de blefaroplastia superior e lip lift para a People Brasil
       capa: assets/poster/v12.webp
       previa: assets/video/v12-p.mp4
       video: assets/video/v12.mp4
@@ -216,7 +191,7 @@ portfolio:
       previa: assets/video/v17-p.mp4
       video: assets/video/v17.mp4
     - tipo: Bastidor em clínica
-      cliente: "[INSERIR CLIENTE]"
+      cliente: '[INSERIR CLIENTE]'
       capa: assets/poster/v09.webp
       previa: assets/video/v09-p.mp4
       video: assets/video/v09.mp4
@@ -238,7 +213,7 @@ bastidores:
   dentro_previa: assets/video/v01-p.mp4
   dentro_video: assets/video/v01.mp4
 como_funciona:
-  rotulo: "05"
+  rotulo: '05'
   titulo: Como funciona
   passos:
     - titulo: Conversa
@@ -250,37 +225,21 @@ como_funciona:
     - titulo: Edição e entrega
       texto: Você recebe o material finalizado dentro do prazo combinado
 perguntas:
-  rotulo: "06"
+  rotulo: '06'
   titulo: Perguntas frequentes
   itens:
     - pergunta: Qual a diferença entre Videomaker e Produção do zero?
-      resposta: "No **Videomaker**, você já tem a ideia e sabe o que precisa ser
-        feito: eu cuido da captação e da edição, seguindo a proposta que você
-        definiu. Na **Produção do zero**, você sabe que precisa comunicar algo,
-        mas não sabe como transformar isso em vídeo: eu desenvolvo a ideia, o
-        roteiro e a direção e cuido de toda a produção. Quando a proposta pede,
-        também participo do vídeo como modelo."
+      resposta: 'No **Videomaker**, você já tem a ideia e sabe o que precisa ser feito: eu cuido da captação e da edição, seguindo a proposta que você definiu. Na **Produção do zero**, você sabe que precisa comunicar algo, mas não sabe como transformar isso em vídeo: eu desenvolvo a ideia, o roteiro e a direção e cuido de toda a produção. Quando a proposta pede, também participo do vídeo como modelo.'
     - pergunta: Qual a diferença entre Cobertura de eventos e Storymaker?
-      resposta: A **Cobertura de evento** é o registro completo do evento, com
-        bastidores e detalhes, em um material pensado para preservar aquele
-        momento. O **Storymaker** é o registro espontâneo em tempo real para os
-        stories, enquanto tudo acontece, mantendo o público conectado ao evento
-        e a experiência de quem está ali. Os dois serviços também podem ser
-        contratados em conjunto!
+      resposta: A **Cobertura de evento** é o registro completo do evento, com bastidores e detalhes, em um material pensado para preservar aquele momento. O **Storymaker** é o registro espontâneo em tempo real para os stories, enquanto tudo acontece, mantendo o público conectado ao evento e a experiência de quem está ali. Os dois serviços também podem ser contratados em conjunto!
     - pergunta: Vocês atendem fora de Curitiba?
-      resposta: Sim! Estamos em Curitiba, mas também atendemos outras localidades.
-        Entre em contato para conversarmos sobre o seu projeto.
+      resposta: Sim! Estamos em Curitiba, mas também atendemos outras localidades. Entre em contato para conversarmos sobre o seu projeto.
     - pergunta: Qual o prazo de entrega?
-      resposta: O prazo de entrega varia conforme o formato e as necessidades de cada
-        projeto. Tudo é alinhado previamente para que você saiba o que esperar e
-        possamos organizar cada etapa com tranquilidade.
+      resposta: O prazo de entrega varia conforme o formato e as necessidades de cada projeto. Tudo é alinhado previamente para que você saiba o que esperar e possamos organizar cada etapa com tranquilidade.
     - pergunta: Com quanto tempo de antecedência preciso reservar?
-      resposta: "[INSERIR]"
+      resposta: '[INSERIR]'
     - pergunta: Como funciona o orçamento?
-      resposta: Cada projeto tem suas particularidades, por isso o orçamento é
-        personalizado de acordo com o serviço escolhido, as necessidades e os
-        detalhes da produção. Entre em contato para conversarmos sobre sua ideia
-        e prepararmos uma proposta para você!
+      resposta: Cada projeto tem suas particularidades, por isso o orçamento é personalizado de acordo com o serviço escolhido, as necessidades e os detalhes da produção. Entre em contato para conversarmos sobre sua ideia e prepararmos uma proposta para você!
 criar:
   rotulo: 07 — Vamos criar?
   titulo: |-
@@ -289,12 +248,13 @@ criar:
   frase: Seu projeto. Nosso olhar.
   dica: Preencha em menos de um minuto. A mensagem chega pronta no WhatsApp da Twice.
   botao: Quero criar com a Twice
-  nota: Ao clicar, você será direcionado ao WhatsApp da Twice com sua mensagem
-    pronta para enviar!
+  nota: Ao clicar, você será direcionado ao WhatsApp da Twice com sua mensagem pronta para enviar!
 contato:
   assinatura_nome: Luísa Clara
   assinatura_texto: Videomaker • TWICE | Comunicação em dobro
 rodape:
   linha1: Twice | Comunicação em dobro — Produção audiovisual
   linha2: Curitiba – PR
+  link_condicoes: ''
+  link_privacidade: ''
   copyright: Twice Comunicação. Todos os direitos reservados.
