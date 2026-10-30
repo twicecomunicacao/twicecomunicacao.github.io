@@ -164,7 +164,8 @@
           </button>
           <div class="svc__body" id="svc{{ n }}">
             <div class="svc__inner">
-              <div class="svc__media-m"><video muted loop playsinline preload="none" poster="{{ item.capa }}" data-src="{{ item.previa }}" aria-hidden="true"></video></div>
+              {%- include midia.html v='' p=item.previa c=item.capa %}
+              <div class="svc__media-m"><video muted loop playsinline preload="none" poster="{{ m_capa }}" data-src="{{ m_prev }}" aria-hidden="true"></video></div>
               <p>{% include md.html v=item.descricao %}</p>
               <a class="link-cta" href="#criar" data-service="{{ item.nome | escape }}">Quero esse <span aria-hidden="true">→</span></a>
             </div>
@@ -176,7 +177,8 @@
       <div class="svc__stage" aria-hidden="true">
         <div class="svc__frame">
           {%- for item in sv.itens %}
-          <video{% if forloop.first %} class="is-on"{% endif %} muted loop playsinline preload="none" poster="{{ item.capa }}" data-src="{{ item.previa }}"></video>
+          {%- include midia.html v='' p=item.previa c=item.capa %}
+          <video{% if forloop.first %} class="is-on"{% endif %} muted loop playsinline preload="none" poster="{{ m_capa }}" data-src="{{ m_prev }}"></video>
           {%- endfor %}
         </div>
         <p class="svc__sign">{{ sv.assinatura | escape }}</p>
@@ -203,12 +205,16 @@
   </div>
 
   <div class="rail" id="rail" tabindex="0" aria-label="Formatos, role para o lado">
+    {%- assign n_fmt = 0 %}
     {%- for item in f.itens %}
-    {%- capture num %}{% if forloop.index < 10 %}0{% endif %}{{ forloop.index }}{% endcapture %}
+    {%- include midia.html v=item.video p=item.previa c=item.capa %}
+    {%- if m_video == '' %}{% continue %}{% endif %}
+    {%- assign n_fmt = n_fmt | plus: 1 %}
+    {%- capture num %}{% if n_fmt < 10 %}0{% endif %}{{ n_fmt }}{% endcapture %}
     <article class="fmt">
       <span class="fmt__num">{{ num }}</span>
-      <button class="fmt__frame play" data-full="{{ item.video }}" data-cap="{{ item.nome | escape }}" aria-label="Assistir formato {{ num }} com som">
-        <video class="auto" muted loop playsinline preload="none" poster="{{ item.capa }}" data-src="{% if item.previa != blank %}{{ item.previa }}{% else %}{{ item.video }}{% endif %}"></video>
+      <button class="fmt__frame play" data-full="{{ m_video }}" data-cap="{{ item.nome | escape }}" aria-label="Assistir formato {{ num }} com som">
+        <video class="auto" muted loop playsinline preload="none" poster="{{ m_capa }}" data-src="{{ m_prev }}"></video>
       </button>
       <h3 class="fmt__name">{% include t.html v=item.nome %}</h3>
       {%- if item.descricao != blank %}
@@ -231,16 +237,20 @@
     </div>
 
     <div class="grid" id="grid">
+      {%- assign n_port = 0 %}
       {%- for item in p.itens %}
+      {%- include midia.html v=item.video p=item.previa c=item.capa %}
+      {%- if m_video == '' %}{% continue %}{% endif %}
+      {%- assign n_port = n_port | plus: 1 %}
       {%- capture cap %}{{ item.tipo }}{% if item.cliente != blank and item.cliente contains '[INSERIR' %}{% elsif item.cliente != blank %} · {{ item.cliente }}{% endif %}{% endcapture %}
-      <button class="tile play reveal" data-full="{{ item.video }}" data-cap="{{ cap | escape }}" aria-label="Assistir: {{ item.tipo | escape }}, com som"{% if forloop.index > p.mostrar_primeiros %} hidden{% endif %}>
-        <video class="auto" muted loop playsinline preload="none" poster="{{ item.capa }}" data-src="{% if item.previa != blank %}{{ item.previa }}{% else %}{{ item.video }}{% endif %}"></video>
+      <button class="tile play reveal" data-full="{{ m_video }}" data-cap="{{ cap | escape }}" aria-label="Assistir: {{ item.tipo | escape }}, com som"{% if n_port > p.mostrar_primeiros %} hidden{% endif %}>
+        <video class="auto" muted loop playsinline preload="none" poster="{{ m_capa }}" data-src="{{ m_prev }}"></video>
         <span class="tile__watch">Assistir</span>
         <span class="tile__cap"><strong>{{ item.tipo | escape }}</strong>{% if item.cliente != blank %}{% include t.html v=item.cliente %}{% endif %}</span>
       </button>
       {%- endfor %}
     </div>
-    {%- if p.itens.size > p.mostrar_primeiros %}
+    {%- if n_port > p.mostrar_primeiros %}
     <div class="grid__more"><button class="btn btn--line" id="more">{{ p.botao_mais | escape }}</button></div>
     {%- endif %}
   </div>
@@ -252,13 +262,15 @@
       <p class="reveal">{% include md.html v=b.texto %}</p>
     </div>
     <div class="dobro__pair">
-      <button class="dobro__frame play reveal" data-full="{{ b.fora_video }}" data-cap="{{ b.fora_legenda | escape }}" aria-label="Assistir bastidor com som">
-        <video class="auto" muted loop playsinline preload="none" poster="{{ b.fora_capa }}" data-src="{{ b.fora_previa }}"></video>
+      {%- include midia.html v=b.fora_video p=b.fora_previa c=b.fora_capa %}
+      <button class="dobro__frame play reveal" data-full="{{ m_video }}" data-cap="{{ b.fora_legenda | escape }}" aria-label="Assistir bastidor com som">
+        <video class="auto" muted loop playsinline preload="none" poster="{{ m_capa }}" data-src="{{ m_prev }}"></video>
         <span class="dobro__cap">{{ b.fora_legenda | escape }}</span>
       </button>
       <span class="dobro__sep" aria-hidden="true"></span>
-      <button class="dobro__frame play reveal" data-full="{{ b.dentro_video }}" data-cap="{{ b.dentro_legenda | escape }}" aria-label="Assistir vídeo finalizado com som">
-        <video class="auto" muted loop playsinline preload="none" poster="{{ b.dentro_capa }}" data-src="{{ b.dentro_previa }}"></video>
+      {%- include midia.html v=b.dentro_video p=b.dentro_previa c=b.dentro_capa %}
+      <button class="dobro__frame play reveal" data-full="{{ m_video }}" data-cap="{{ b.dentro_legenda | escape }}" aria-label="Assistir vídeo finalizado com som">
+        <video class="auto" muted loop playsinline preload="none" poster="{{ m_capa }}" data-src="{{ m_prev }}"></video>
         <span class="dobro__cap">{{ b.dentro_legenda | escape }}</span>
       </button>
     </div>
