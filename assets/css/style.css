@@ -148,9 +148,10 @@ p{margin:0 0 1em}
 .about__photo figcaption strong{font-weight:700}
 .about__photo figcaption span{color:var(--grey)}
 .about__luisa{max-width:52ch}
+.about__luisa-txt p{margin:0 0 1em}
+.about__luisa-txt p:last-child{margin-bottom:0}
 @media (min-width:960px){
   .about{grid-template-columns:1fr 1fr;align-items:start}
-  .about__text{position:sticky;top:calc(var(--nav-h) + 48px)}
   .about__pair{grid-row:span 2}
   .about__luisa{grid-column:1}
 }
