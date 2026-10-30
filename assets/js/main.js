@@ -15,7 +15,15 @@
   });
 
   /* ---------- vídeos: carregam e tocam só quando visíveis ---------- */
-  const load = v => { if (!v.src && v.dataset.src) { v.src = v.dataset.src; } };
+  const load = v => {
+    if (v.src || !v.dataset.src) return;
+    // se a prévia ainda não existir (vídeo recém-enviado pelo painel), usa o vídeo completo
+    v.addEventListener('error', () => {
+      const full = (v.closest('.play') || {}).dataset?.full;
+      if (full && !v.src.endsWith(full.replace(/^\//, ''))) { v.src = full; const p = v.play(); p && p.catch(() => {}); }
+    }, { once: true });
+    v.src = v.dataset.src;
+  };
   const vidIO = 'IntersectionObserver' in window ? new IntersectionObserver(entries => {
     entries.forEach(e => {
       const v = e.target;
